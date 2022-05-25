@@ -26,5 +26,11 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
 ```
 
+The folder `resources` is copy in the Docker when the Docker image are build.
+If you put an file in `ressources` folder before the build, you can scan the entry insert the file.
+Example
+```shell
+sudo docker run --rm smap -iL <name_of_the_file_in_ressources>
+```
 ## Version
 Version 1.0
