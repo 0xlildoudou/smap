@@ -2,6 +2,7 @@
 
 Shodan nmap in Docker (smap)
 ## How to use
+### Classical use
 Create the Docker image
 ```shell
 sudo docker build . -t smap
@@ -26,11 +27,10 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
 ```
 
-The folder `resources` is copy in the Docker when the Docker image are build.
-If you put an file in `ressources` folder before the build, you can scan the entry insert the file.
-Example
+### Using file
+Create a volume from `./ressources`
 ```shell
-sudo docker run --rm smap -iL <name_of_the_file_in_ressources>
+sudo docker run --rm -v $(pwd)/ressources:./data smap -iL /data/example.txt
 ```
 ## Version
 Version 1.0
